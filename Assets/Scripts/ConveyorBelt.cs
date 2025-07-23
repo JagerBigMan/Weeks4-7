@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class ConveyorBelt : MonoBehaviour
+{
+    public float conveyorBeltSpeed = 2f;
+    public GameObject partToMove; //This is where I will put the prefab so that it will detect it and move it
+    public float activationDistance = 1f; //how close an object must be to get on the conveyor belt
+    public Vector3 moveDirection = Vector3.right; //direction to push 
+    public PartSpawner partsSpawner;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (partsSpawner.spawnedParts.Count > 0)
+        {
+            for (int index = 0; index < partsSpawner.spawnedParts.Count; index++)
+            {
+                float distance = Mathf.Abs(transform.position.y - partsSpawner.spawnedParts[index].transform.position.y);
+
+                if (distance <= activationDistance)
+                {
+                    partsSpawner.spawnedParts[index].GetComponent<UnassembledParts>().dropSpeed = 0f;
+
+                    partsSpawner.spawnedParts[index].transform.position += moveDirection * conveyorBeltSpeed * Time.deltaTime;
+                }
+
+
+
+            }
+        }
+
+    }
+}
