@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class ProcessingStation : MonoBehaviour
@@ -13,14 +12,6 @@ public class ProcessingStation : MonoBehaviour
 
     public List<GameObject> outputs;
 
-    //New Logic for clickable station
-    private bool isInAssemblyMode = false;
-    public List<GameObject> assemblyParts;  //This is the stuff inside the assembly mode, I will use this to check for if player clicked them in the right order.
-    public List<GameObject> clickedParts;  //This is to check the clicked parts
-    public List<string> correctOrder;       //This is for the names of the parts clicked ("Red", "Blue", "Green", etc.)
-
-    public GameObject assemblyUI;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,34 +21,28 @@ public class ProcessingStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isInAssemblyMode && Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
 
-            if (Vector3.Distance(transform.position, mousePosition) <= activationDistance)
+        if (partsSpawner.spawnedParts.Count > 0)
+        {
+            for (int index = 0; index < partsSpawner.spawnedParts.Count; index++)
             {
-                EnterAssemblyMode();
+                float activationRange = (transform.position.x - partsSpawner.spawnedParts[index].transform.position.x);
+
+                if (activationRange <= activationDistance)
+                {
+                    Vector3 spawnPosition = partsSpawner.spawnedParts[index].transform.position;
+
+                    Destroy(partsSpawner.spawnedParts[index]);
+
+                    partsSpawner.spawnedParts.RemoveAt(index); //searched online for solution to remove the first index of a list  https://discussions.unity.com/t/lists-and-removeat/651500 
+
+                    GameObject output = Instantiate(circleOutput, spawnPosition, Quaternion.identity);
+                    output.transform.position += Vector3.right * moveOutSpeed * Time.deltaTime;
+
+                }
             }
-
-
-        }
-
-
-
-    }
-
-    void EnterAssemblyMode()
-    {
-        isInAssemblyMode = true;
-
-        //Show the Assembling Mode UI elements
-        if (assemblyUI != null)
-        {
-            assemblyUI.SetActive(true);
         }
     }
-
 }
-    
+
 

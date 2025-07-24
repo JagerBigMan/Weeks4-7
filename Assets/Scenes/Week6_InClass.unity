@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  exhaustedSpeed: 0.5
   moveClickAudioSource: {fileID: 189704813}
   stopClickAudioSource: {fileID: 189704814}
   flipClickAudioSource: {fileID: 189704815}
@@ -595,10 +596,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9d71f9b5efa1ce54aa511d4f663d01fb, type: 3}
   - {fileID: 8300000, guid: dc03b70500d77d641b9ca15a8598a3ad, type: 3}
   - {fileID: 8300000, guid: 5903467212ee3754d97a9435cb638ff9, type: 3}
-  staminaSlider: {fileID: 0}
-  maxStamina: 0
+  staminaSlider: {fileID: 900920166}
+  maxStamina: 100
   minStamina: 0
-  staminaCost: 0
+  staminaCost: 40
 --- !u!82 &189704813
 AudioSource:
   m_ObjectHideFlags: 0
@@ -899,7 +900,7 @@ GameObject:
   - component: {fileID: 199781586}
   - component: {fileID: 199781585}
   m_Layer: 5
-  m_Name: Health Bar Fill
+  m_Name: Stamina Bar Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,10 +1769,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 189704812}
+        m_TargetAssemblyTypeName: FlipMover, Assembly-CSharp
+        m_MethodName: OnStaminaChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &985574815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985574815}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
