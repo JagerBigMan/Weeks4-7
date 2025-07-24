@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ConveyorBelt : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class ConveyorBelt : MonoBehaviour
     public float activationDistance = 1f; //how close an object must be to get on the conveyor belt
     public Vector3 moveDirection = Vector3.right; //direction to push 
     public PartSpawner partsSpawner;
+
+    public Slider speedController;
+    public float minBeltSpeed;
+    public float maxBeltSpeed;
+    private float currentBeltSpeed;
 
     // Start is called before the first frame update
     void Start()
