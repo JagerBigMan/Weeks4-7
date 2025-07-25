@@ -20,12 +20,23 @@ public class ConveyorBelt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if( speedController != null )
+        {
+            speedController.minValue = minBeltSpeed;
+            speedController.maxValue = maxBeltSpeed;
+            speedController.value = conveyorBeltSpeed;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (speedController != null)
+        {
+            {
+                conveyorBeltSpeed = speedController.value;
+            }
+        }
         if (partsSpawner.spawnedParts.Count > 0)
         {
             for (int index = 0; index < partsSpawner.spawnedParts.Count; index++)
