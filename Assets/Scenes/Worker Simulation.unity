@@ -1350,9 +1350,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664763647}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.6867, y: -0.723, z: 0}
-  m_LocalScale: {x: 1.862939, y: 1.862939, z: 1.862939}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.46795, y: 0.43001407, z: 0}
+  m_LocalScale: {x: 0.21791838, y: 12.838998, z: 1.862939}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1900101658}
@@ -1366,7 +1366,7 @@ Transform:
   - {fileID: 553739565}
   - {fileID: 1270174853}
   - {fileID: 1484463996}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1125936716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694141022
 GameObject:
@@ -1719,7 +1719,7 @@ GameObject:
   - component: {fileID: 923963814}
   - component: {fileID: 923963813}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Factory Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1785,12 +1785,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923963812}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0696, y: -0.501, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.37191206, y: -0.26944396, z: 9.929304}
   m_LocalScale: {x: 2.6811, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 978578956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945600370
 GameObject:
@@ -1882,6 +1882,39 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &978578955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978578956}
+  m_Layer: 0
+  m_Name: Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &978578956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978578955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.44151208, y: -0.23155603, z: -9.929304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1060832657}
+  - {fileID: 923963814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990436782
@@ -2040,7 +2073,7 @@ GameObject:
   - component: {fileID: 1060832656}
   - component: {fileID: 1060832655}
   m_Layer: 0
-  m_Name: Factory
+  m_Name: Factory Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2125,12 +2158,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060832654}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.62, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3715121, y: 0.85155606, z: 9.929304}
   m_LocalScale: {x: 3.347, y: 3.347, z: 3.347}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 978578956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117600732
 GameObject:
@@ -2228,7 +2261,7 @@ GameObject:
   - component: {fileID: 1125936715}
   - component: {fileID: 1125936717}
   m_Layer: 0
-  m_Name: Conveyor Belt (7)
+  m_Name: Conveyor Belt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2331,8 @@ Transform:
   m_LocalPosition: {x: -5.0106, y: -0.51, z: 0}
   m_LocalScale: {x: 0.1451, y: 8.548791, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 664763649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1125936717
@@ -3455,7 +3489,7 @@ GameObject:
   - component: {fileID: 2093550811}
   - component: {fileID: 2093550810}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3533,11 +3567,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 945600373}
-  - {fileID: 1060832657}
   - {fileID: 1125936716}
-  - {fileID: 664763649}
-  - {fileID: 29073504}
-  - {fileID: 923963814}
+  - {fileID: 978578956}
   - {fileID: 2093550811}
-  - {fileID: 889328650}
+  - {fileID: 29073504}
   - {fileID: 1055671994}
+  - {fileID: 889328650}
