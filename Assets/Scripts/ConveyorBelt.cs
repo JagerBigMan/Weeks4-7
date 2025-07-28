@@ -13,9 +13,9 @@ public class ConveyorBelt : MonoBehaviour
     public PartSpawner partsSpawner;
 
     public Slider speedController;
-    public float minBeltSpeed;
-    public float maxBeltSpeed;
-    private float currentBeltSpeed;
+    public float minBeltSpeed;      //This controls the minimum speed of the controller when the slider value is at 0
+    public float maxBeltSpeed;      //This controls the minimum speed of the controller when the slider value is at 1
+    private float currentBeltSpeed;     
 
     // Start is called before the first frame update
     void Start()
