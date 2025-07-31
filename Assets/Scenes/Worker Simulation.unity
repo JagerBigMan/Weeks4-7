@@ -2045,6 +2045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978578956}
+  - component: {fileID: 978578957}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Untagged
@@ -2069,6 +2070,25 @@ Transform:
   - {fileID: 923963814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978578957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978578955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561aa20d8f2560346963f65e9826a3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationDistance: 0.01
+  partsSpawner: {fileID: 29073505}
+  moveOutSpeed: 2
+  partToProcess: {fileID: 2465869341463687906, guid: cf13eacf7f591ac4c8e6586e0171d6ec, type: 3}
+  circleOutput: {fileID: 8007499276309887482, guid: 5daeb78ff661de948bbb72b2d0fdbeca, type: 3}
+  outputs: []
+  scaleSlider: {fileID: 641324064}
 --- !u!1 &990436782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1060832657}
   - component: {fileID: 1060832656}
-  - component: {fileID: 1060832655}
   m_Layer: 0
   m_Name: Factory Top
   m_TagString: Untagged
@@ -2314,25 +2333,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1060832655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060832654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561aa20d8f2560346963f65e9826a3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 0.01
-  partsSpawner: {fileID: 29073505}
-  moveOutSpeed: 2
-  partToProcess: {fileID: 2465869341463687906, guid: cf13eacf7f591ac4c8e6586e0171d6ec, type: 3}
-  circleOutput: {fileID: 8007499276309887482, guid: 5daeb78ff661de948bbb72b2d0fdbeca, type: 3}
-  outputs: []
-  scaleSlider: {fileID: 641324064}
 --- !u!212 &1060832656
 SpriteRenderer:
   m_ObjectHideFlags: 0

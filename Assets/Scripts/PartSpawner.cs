@@ -59,6 +59,6 @@ public class PartSpawner : MonoBehaviour
         else if (partPrefab == trianglePartPrefab)
             return Color.green;
 
-        return Color.white;         // Default fallback if nothing matches the listed above
+        return Color.white;                                     // Default fallback if nothing matches the listed above
     }
 }
