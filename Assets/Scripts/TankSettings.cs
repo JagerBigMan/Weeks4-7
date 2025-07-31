@@ -24,9 +24,17 @@ public class TankSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateBulletType(bulletToggle.isOn);
+        speedSlider.onValueChanged.AddListener(SetTankSpeed);       //Setting up Speed Slider. For onValueChanged and AddListener I used the same reference as the one in assignment 2
+        tankController.moveSpeed = speedSlider.value;               //https://www.youtube.com/watch?v=JoMb2rbYEnk
 
-        bulletToggle.onValueChanged.AddListener(UpdateBulletType);
+        redButton.onClick.AddListener(() => SetTankColor(Color.red));           //Button logic
+        greenButton.onClick.AddListener(() => SetTankColor(Color.green));       //I'm using AddListener because it works for me very well, I like how simple it is to make different UI elements function with it
+        blueButton.onClick.AddListener(() => SetTankColor(Color.blue));
+
+
+        UpdateBulletType(bulletToggle.isOn);                    //Setting up the bullet switching logic
+
+        bulletToggle.onValueChanged.AddListener(UpdateBulletType);                  
     }
 
     // Update is called once per frame
@@ -35,6 +43,22 @@ public class TankSettings : MonoBehaviour
 
     }
 
+    public void SetTankSpeed(float newSpeed)
+    {
+        tankController.moveSpeed = newSpeed;        //Here I'm setting up the tank speed to match the slider speed. I have the maximum value on the slider set to 5
+    }
+
+    void SetTankColor(Color color)   
+    {
+        if (tankBodySprite != null)
+            tankBodySprite.color = color;
+
+        if (tankBarrelSprite != null)
+            tankBarrelSprite.color = color;
+
+        if(tankTracksSprite != null)
+            tankTracksSprite.color = color;
+    }
     void UpdateBulletType(bool useadvancedBullet)
     {
         if (useadvancedBullet)
@@ -46,4 +70,5 @@ public class TankSettings : MonoBehaviour
             tankController.bulletPrefab = normalBulletPrefab;
         }
     }
+
 }
