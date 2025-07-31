@@ -1,12 +1,12 @@
-using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TankController : MonoBehaviour
 {
     public float moveSpeed = 3f;
 
     public GameObject bulletPrefab;
-    public Transform barrelTip;         //This ensure the bullet spawns at the tip of the barrel not inside it causing overlapping.
+    public Transform barrelTip;                 //This ensure the bullet spawns at the tip of the barrel not inside it causing overlapping.
     public float bulletSpeed = 10f;
     public AudioSource shootSound;
 
@@ -19,27 +19,33 @@ public class TankController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!EventSystem.current.IsPointerOverGameObject())         //I looked online for solutions. This line makese it so that it wont' spawn bullets when clicking on UI elements on screen.
+                                                                    //https://docs.unity3d.com/2018.1/Documentation/ScriptReference/EventSystems.EventSystem.IsPointerOverGameObject.html `
         {
-            GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);      //Both position and rotation of the barrel is mapped onto where the bullet will spawn
-                                                                                                        //So that the bullet won't spawn at a fixed location and now following the barrel.
 
-            bullet.GetComponent<BulletMover>().bulletTravelSpeed = bulletSpeed;
 
-            if(shootSound != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                shootSound.Play();
+                GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, barrelTip.rotation);      //Both position and rotation of the barrel is mapped onto where the bullet will spawn
+                                                                                                            //So that the bullet won't spawn at a fixed location and now following the barrel.
+
+                bullet.GetComponent<BulletMover>().bulletTravelSpeed = bulletSpeed;
+
+                if (shootSound != null)
+                {
+                    shootSound.Play();
+                }
             }
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            }
         }
     }
 }

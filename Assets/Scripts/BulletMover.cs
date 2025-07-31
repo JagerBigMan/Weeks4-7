@@ -6,7 +6,7 @@ using UnityEngine.SubsystemsImplementation;
 public class BulletMover : MonoBehaviour
 {
     public float bulletTravelSpeed = 10f;
-    public float lifeTime = 3f;     //Added a life time for the bullet so it gets destroyed after 3 secs
+    public float lifeTime = 3f;                     //Added a life time for the bullet so it gets destroyed after 3 secs
 
 
     // Start is called before the first frame update

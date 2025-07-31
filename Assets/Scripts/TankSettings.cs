@@ -32,7 +32,7 @@ public class TankSettings : MonoBehaviour
         blueButton.onClick.AddListener(() => SetTankColor(Color.blue));
 
 
-        UpdateBulletType(bulletToggle.isOn);                    //Setting up the bullet switching logic
+        UpdateBulletType(bulletToggle.isOn);                            //Setting up the bullet switching logic
 
         bulletToggle.onValueChanged.AddListener(UpdateBulletType);                  
     }
