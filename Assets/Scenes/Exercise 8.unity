@@ -341,7 +341,7 @@ MonoBehaviour:
         - m_Target: {fileID: 1180009435}
           m_TargetAssemblyTypeName: ImageEvents, Assembly-CSharp
           m_MethodName: OnPointerEnter
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -357,7 +357,7 @@ MonoBehaviour:
         - m_Target: {fileID: 1180009435}
           m_TargetAssemblyTypeName: ImageEvents, Assembly-CSharp
           m_MethodName: OnPointerExit
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -373,7 +373,7 @@ MonoBehaviour:
         - m_Target: {fileID: 1180009435}
           m_TargetAssemblyTypeName: ImageEvents, Assembly-CSharp
           m_MethodName: OnPointerClick
-          m_Mode: 1
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -435,7 +435,7 @@ MonoBehaviour:
   defaultSprite: {fileID: -679358172, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
   hoverSprite: {fileID: -138209937, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
   prefabToSpawn: {fileID: 7804522594709338074, guid: c14340af56868c94b959540ac14582dc, type: 3}
-  targetObject: {fileID: 2465869341463687906, guid: cf13eacf7f591ac4c8e6586e0171d6ec, type: 3}
+  targetObject: {fileID: 1180009430}
 --- !u!1 &1686630901
 GameObject:
   m_ObjectHideFlags: 0
