@@ -13,7 +13,7 @@ public class PathFollower : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 1;     //Line will only show the playher's current position
+        lineRenderer.positionCount = 1;     //Line will only show the player's current position
         lineRenderer.SetPosition(0, transform.position);        //https://docs.unity3d.com/ScriptReference/LineRenderer.SetPosition.html
     }
 
